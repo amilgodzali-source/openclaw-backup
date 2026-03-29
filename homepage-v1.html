@@ -1,0 +1,103 @@
+<div class="azm-page">
+  <header class="azm-topbar">
+    <div class="azm-logo">AZMODA</div>
+    <div class="azm-actions">
+      <a href="/my-account" aria-label="Профиль">👤</a>
+      <a href="/wishlist" aria-label="Избранное">♡</a>
+      <a href="/cart" aria-label="Корзина">🛒</a>
+    </div>
+  </header>
+
+  <form class="azm-search" action="/search" method="get">
+    <input type="text" name="q" placeholder="Поиск бренда, товара, категории" />
+    <button type="submit">Найти</button>
+  </form>
+
+  <section class="azm-hero">
+    <div class="azm-badge">-35%</div>
+    <h1>Весенний стиль</h1>
+    <p>Эксклюзивный выбор AZMODA</p>
+    <a class="azm-btn" href="/catalog">Смотреть каталог</a>
+  </section>
+
+  <section class="azm-section">
+    <div class="azm-title-row">
+      <h2>Категории</h2>
+      <a href="/catalog">Все</a>
+    </div>
+    <div class="azm-cats">
+      <a href="/product-category/zhenshchina">Женщина</a>
+      <a href="/product-category/muzhchina">Мужчина</a>
+      <a href="/product-category/detyam">Детям</a>
+      <a href="/product-category/obuv">Обувь</a>
+    </div>
+  </section>
+
+  <section class="azm-section">
+    <div class="azm-title-row">
+      <h2>Популярное</h2>
+      <a href="/shop">Смотреть все</a>
+    </div>
+    <div class="azm-grid">
+      <article class="azm-card">
+        <a href="/product/test-product-1">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600" alt="Товар 1">
+          <div class="azm-disc">-20%</div>
+          <h3>Кроссовки женские</h3>
+          <p class="azm-price">3 490 ₽ <span>4 390 ₽</span></p>
+        </a>
+      </article>
+      <article class="azm-card">
+        <a href="/product/test-product-2">
+          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600" alt="Товар 2">
+          <div class="azm-disc">-15%</div>
+          <h3>Футболка oversize</h3>
+          <p class="azm-price">1 990 ₽ <span>2 350 ₽</span></p>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <nav class="azm-tabs">
+    <a class="active" href="/">Главная</a>
+    <a href="/catalog">Каталог</a>
+    <a href="/search">Поиск</a>
+    <a href="/cart">Корзина</a>
+    <a href="/my-account">Профиль</a>
+  </nav>
+</div>
+
+<style>
+  .azm-page{max-width:430px;margin:0 auto;background:#f5f1ec;padding:12px 12px 84px;font-family:Inter,Arial,sans-serif;color:#2d241c}
+  .azm-topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .azm-logo{font-family:Georgia,serif;font-size:34px;font-weight:700}
+  .azm-actions{display:flex;gap:8px}
+  .azm-actions a{text-decoration:none;background:#fff;border:1px solid #e6dccf;border-radius:10px;padding:6px 8px;font-size:16px}
+  .azm-search{display:flex;gap:8px;margin-bottom:12px}
+  .azm-search input{flex:1;border:1px solid #e4d9ca;border-radius:24px;padding:11px 14px;background:#fff;font-size:14px}
+  .azm-search button{border:0;background:#c7a169;color:#fff;border-radius:22px;padding:0 14px;font-size:14px;cursor:pointer}
+  .azm-hero{background:linear-gradient(130deg,#ece1d2,#e2d4c0);border-radius:18px;padding:14px;position:relative;margin-bottom:12px}
+  .azm-badge{position:absolute;right:12px;top:12px;background:#b78b41;color:#fff;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700}
+  .azm-hero h1{margin:0 0 6px;font-family:Georgia,serif;font-size:30px;line-height:1.05}
+  .azm-hero p{margin:0 0 10px;color:#6f5f4d;font-size:14px}
+  .azm-btn{display:inline-block;text-decoration:none;background:#2d241c;color:#fff;border-radius:22px;padding:10px 14px;font-size:13px}
+  .azm-section{margin-bottom:14px}
+  .azm-title-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .azm-title-row h2{margin:0;font-size:22px;font-family:Georgia,serif}
+  .azm-title-row a{text-decoration:none;color:#7a6a58;font-size:13px}
+  .azm-cats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  .azm-cats a{text-decoration:none;text-align:center;background:#fff;border:1px solid #e6dccf;border-radius:12px;padding:10px;color:#3b3025;font-size:13px}
+  .azm-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .azm-card{background:#fff;border:1px solid #e6dccf;border-radius:14px;padding:8px;position:relative}
+  .azm-card a{text-decoration:none;color:#2f2418}
+  .azm-card img{width:100%;height:150px;object-fit:cover;border-radius:10px;display:block}
+  .azm-disc{position:absolute;left:12px;top:12px;background:#b84824;color:#fff;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:700}
+  .azm-card h3{font-size:14px;margin:8px 0 4px;line-height:1.25}
+  .azm-price{margin:0;font-weight:700;color:#b84824;font-size:14px}
+  .azm-price span{color:#8b7b68;text-decoration:line-through;font-size:12px;margin-left:6px;font-weight:500}
+  .azm-tabs{position:fixed;left:50%;transform:translateX(-50%);bottom:10px;width:min(430px,calc(100% - 20px));background:#fff;border:1px solid #e8dece;border-radius:16px;padding:10px;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;z-index:9999}
+  .azm-tabs a{text-decoration:none;text-align:center;font-size:12px;color:#7a6a58}
+  .azm-tabs a.active{color:#b78b41;font-weight:700}
+  @media (min-width:768px) and (max-width:1024px){.azm-page{max-width:900px}.azm-grid{grid-template-columns:repeat(3,1fr)}.azm-tabs{width:min(900px,calc(100% - 24px))}}
+  @media (min-width:1025px){.azm-page{max-width:1200px}.azm-grid{grid-template-columns:repeat(5,1fr)}.azm-tabs{width:min(1200px,calc(100% - 24px))}}
+</style>
