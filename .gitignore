@@ -1,0 +1,6 @@
+
+# Sensitive/local runtime
+jarvis-iphone/.env
+jarvis-iphone/server.log
+jarvis-iphone/__pycache__/
+*.pyc
