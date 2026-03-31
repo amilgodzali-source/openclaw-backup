@@ -164,3 +164,169 @@ If you're in a container, run the gateway in the foreground instead of `openclaw
 Listening: *:18789
 Troubles: run openclaw status
 Troubleshooting: https://docs.openclaw.ai/troubleshooting
+=== OPENCLAW STATUS ===
+OpenClaw status
+
+Overview
+┌──────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Item                 │ Value                                                                                         │
+├──────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Dashboard            │ http://155.212.225.175:18789/                                                                 │
+│ OS                   │ linux 6.8.0-106-generic (x64) · node 22.22.1                                                  │
+│ Tailscale            │ off                                                                                           │
+│ Channel              │ stable (default)                                                                              │
+│ Update               │ pnpm · up to date · npm latest 2026.3.28                                                      │
+│ Gateway              │ local · ws://127.0.0.1:18789 (local loopback) · reachable 46ms · auth token · ahiidkvhek      │
+│                      │ (155.212.225.175) app 2026.3.28 linux 6.8.0-106-generic                                       │
+│ Gateway service      │ systemd not installed                                                                         │
+│ Node service         │ systemd not installed                                                                         │
+│ Agents               │ 1 · no bootstrap files · sessions 3 · default main active 1m ago                              │
+│ Memory               │ 0 files · 0 chunks · dirty · sources memory · plugin memory-core · vector ready · fts ready   │
+│                      │ · cache on (0)                                                                                │
+│ Plugin compatibility │ none                                                                                          │
+│ Probes               │ skipped (use --deep)                                                                          │
+│ Events               │ none                                                                                          │
+│ Heartbeat            │ 30m (main)                                                                                    │
+│ Sessions             │ 3 active · default gpt-5.3-codex (200k ctx) · ~/.openclaw/agents/main/sessions/sessions.json  │
+└──────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Security audit
+Summary: 0 critical · 0 warn · 1 info
+No critical or warn findings detected.
+Full report: openclaw security audit
+Deep probe: openclaw security audit --deep
+
+Channels
+┌──────────┬─────────┬────────┬────────────────────────────────────────────────────────────────────────────────────────┐
+│ Channel  │ Enabled │ State  │ Detail                                                                                 │
+├──────────┼─────────┼────────┼────────────────────────────────────────────────────────────────────────────────────────┤
+│ Telegram │ ON      │ OK     │ token config (8267…yl9o · len 46) · accounts 1/1                                       │
+└──────────┴─────────┴────────┴────────────────────────────────────────────────────────────────────────────────────────┘
+
+Sessions
+┌───────────────────────────────────────────────────────────────┬────────┬─────────┬───────────────┬───────────────────┐
+│ Key                                                           │ Kind   │ Age     │ Model         │ Tokens            │
+├───────────────────────────────────────────────────────────────┼────────┼─────────┼───────────────┼───────────────────┤
+│ agent:main:main                                               │ direct │ 1m ago  │ gpt-5.3-codex │ 66k/272k (24%)    │
+│ agent:main:telegram:direct:6566…                              │ direct │ 7h ago  │ gpt-5.3-codex │ 24k/272k (9%)     │
+│ telegram:slash:6566313188                                     │ direct │ 24d ago │ gpt-5.3-codex │ unknown/200k (?%) │
+└───────────────────────────────────────────────────────────────┴────────┴─────────┴───────────────┴───────────────────┘
+
+FAQ: https://docs.openclaw.ai/faq
+Troubleshooting: https://docs.openclaw.ai/troubleshooting
+
+Next steps:
+  Need to share?      openclaw status --all
+  Need to debug live? openclaw logs --follow
+  Need to test channels? openclaw status --deep
+
+=== GATEWAY STATUS ===
+Service: systemd (disabled)
+File logs: /tmp/openclaw/openclaw-2026-03-31.log
+
+Service config looks out of date or non-standard.
+Service config issue: Gateway service PATH is not set; the daemon should use a minimal PATH.
+Recommendation: run "openclaw doctor" (or "openclaw doctor --repair").
+Config (cli): ~/.openclaw/openclaw.json
+Config (service): ~/.openclaw/openclaw.json
+
+Gateway: bind=lan (0.0.0.0), port=18789 (env/config)
+Probe target: ws://127.0.0.1:18789
+Dashboard: http://155.212.225.175:18789/
+Probe note: bind=lan listens on 0.0.0.0 (all interfaces); probing via 127.0.0.1.
+
+Runtime: unknown (systemctl --user unavailable: Failed to connect to bus: No medium found)
+RPC probe: ok
+
+systemd user services unavailable.
+systemd user services are unavailable; install/enable systemd or run the gateway under your supervisor.
+On a headless server (SSH/no desktop session): run `sudo loginctl enable-linger $(whoami)` to persist your systemd user session across logins.
+Also ensure XDG_RUNTIME_DIR is set: `export XDG_RUNTIME_DIR=/run/user/$(id -u)`, then retry.
+If you're in a container, run the gateway in the foreground instead of `openclaw gateway`.
+
+Listening: *:18789
+Troubles: run openclaw status
+Troubleshooting: https://docs.openclaw.ai/troubleshooting
+=== OPENCLAW STATUS ===
+OpenClaw status
+
+Overview
+┌──────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Item                 │ Value                                                                                         │
+├──────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Dashboard            │ http://155.212.225.175:18789/                                                                 │
+│ OS                   │ linux 6.8.0-106-generic (x64) · node 22.22.1                                                  │
+│ Tailscale            │ off                                                                                           │
+│ Channel              │ stable (default)                                                                              │
+│ Update               │ pnpm · up to date · npm latest 2026.3.28                                                      │
+│ Gateway              │ local · ws://127.0.0.1:18789 (local loopback) · reachable 47ms · auth token · ahiidkvhek      │
+│                      │ (155.212.225.175) app 2026.3.28 linux 6.8.0-106-generic                                       │
+│ Gateway service      │ systemd not installed                                                                         │
+│ Node service         │ systemd not installed                                                                         │
+│ Agents               │ 1 · no bootstrap files · sessions 3 · default main active 1m ago                              │
+│ Memory               │ 0 files · 0 chunks · dirty · sources memory · plugin memory-core · vector ready · fts ready   │
+│                      │ · cache on (0)                                                                                │
+│ Plugin compatibility │ none                                                                                          │
+│ Probes               │ skipped (use --deep)                                                                          │
+│ Events               │ none                                                                                          │
+│ Heartbeat            │ 30m (main)                                                                                    │
+│ Sessions             │ 3 active · default gpt-5.3-codex (200k ctx) · ~/.openclaw/agents/main/sessions/sessions.json  │
+└──────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Security audit
+Summary: 0 critical · 0 warn · 1 info
+No critical or warn findings detected.
+Full report: openclaw security audit
+Deep probe: openclaw security audit --deep
+
+Channels
+┌──────────┬─────────┬────────┬────────────────────────────────────────────────────────────────────────────────────────┐
+│ Channel  │ Enabled │ State  │ Detail                                                                                 │
+├──────────┼─────────┼────────┼────────────────────────────────────────────────────────────────────────────────────────┤
+│ Telegram │ ON      │ OK     │ token config (8267…yl9o · len 46) · accounts 1/1                                       │
+└──────────┴─────────┴────────┴────────────────────────────────────────────────────────────────────────────────────────┘
+
+Sessions
+┌──────────────────────────────────────────────────┬────────┬─────────┬───────────────┬────────────────────────────────┐
+│ Key                                              │ Kind   │ Age     │ Model         │ Tokens                         │
+├──────────────────────────────────────────────────┼────────┼─────────┼───────────────┼────────────────────────────────┤
+│ agent:main:main                                  │ direct │ 1m ago  │ gpt-5.3-codex │ 66k/272k (24%) · 🗄️ 5% cached  │
+│ agent:main:telegram:direct:6566…                 │ direct │ 1h ago  │ gpt-5.3-codex │ 26k/272k (10%) · 🗄️ 99% cached │
+│ telegram:slash:6566313188                        │ direct │ 24d ago │ gpt-5.3-codex │ unknown/200k (?%)              │
+└──────────────────────────────────────────────────┴────────┴─────────┴───────────────┴────────────────────────────────┘
+
+FAQ: https://docs.openclaw.ai/faq
+Troubleshooting: https://docs.openclaw.ai/troubleshooting
+
+Next steps:
+  Need to share?      openclaw status --all
+  Need to debug live? openclaw logs --follow
+  Need to test channels? openclaw status --deep
+
+=== GATEWAY STATUS ===
+Service: systemd (disabled)
+File logs: /tmp/openclaw/openclaw-2026-03-31.log
+
+Service config looks out of date or non-standard.
+Service config issue: Gateway service PATH is not set; the daemon should use a minimal PATH.
+Recommendation: run "openclaw doctor" (or "openclaw doctor --repair").
+Config (cli): ~/.openclaw/openclaw.json
+Config (service): ~/.openclaw/openclaw.json
+
+Gateway: bind=lan (0.0.0.0), port=18789 (env/config)
+Probe target: ws://127.0.0.1:18789
+Dashboard: http://155.212.225.175:18789/
+Probe note: bind=lan listens on 0.0.0.0 (all interfaces); probing via 127.0.0.1.
+
+Runtime: unknown (systemctl --user unavailable: Failed to connect to bus: No medium found)
+RPC probe: ok
+
+systemd user services unavailable.
+systemd user services are unavailable; install/enable systemd or run the gateway under your supervisor.
+On a headless server (SSH/no desktop session): run `sudo loginctl enable-linger $(whoami)` to persist your systemd user session across logins.
+Also ensure XDG_RUNTIME_DIR is set: `export XDG_RUNTIME_DIR=/run/user/$(id -u)`, then retry.
+If you're in a container, run the gateway in the foreground instead of `openclaw gateway`.
+
+Listening: *:18789
+Troubles: run openclaw status
+Troubleshooting: https://docs.openclaw.ai/troubleshooting
